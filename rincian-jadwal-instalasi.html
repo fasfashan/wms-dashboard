@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body class="d-flex">
+  <!-- 🔒 SIDEBAR (Jangan diubah) -->
+  <aside id="sidebar" class="bg-dark  text-white d-flex flex-column p-3">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <img src="assets/img/logo.png" id="brandText" class="img-fluid" style="max-height: 40px; max-width: 100px" />
+      <button id="toggleSidebar" class="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center">
+        <i id="arrowIcon" class="bi bi-arrow-left"></i>
+      </button>
+    </div>
+
+    <ul class="nav flex-column gap-1">
+      <li class="nav-item active">
+        <a href="index.html" class="nav-link text-white d-flex align-items-center gap-2" title="Dashboard">
+          <i class="bi bi-house-door"></i>
+          <span class="sidebar-text">Dashboard</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Accordion for Aktivitas -->
+    <div class="accordion" id="sidebarAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button active d-flex align-items-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAktivitas" aria-expanded="true" aria-controls="collapseAktivitas">
+            <i class="bi bi-check2-square"></i>
+            <span class="sidebar-text">Aktivitas</span>
+          </button>
+        </h2>
+        <div id="collapseAktivitas" class="accordion-collapse collapse show active">
+          <div class="accordion-body">
+            <a href="jadwal-instalasi.html" class="d-flex align-items-center gap-2">
+              <span class="sidebar-text">Jadwal Instalasi</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed d-flex align-items-center gap-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLaporan" aria-expanded="false" aria-controls="collapseLaporan">
+            <i class="bi bi-bar-chart-line"></i>
+            <span class="sidebar-text">Laporan</span>
+          </button>
+        </h2>
+        <div id="collapseLaporan" class="accordion-collapse collapse" data-bs-parent="#sidebarAccordion">
+          <div class="accordion-body">
+            <a href="laporan-jadwal-instalasi.html" class="d-flex align-items-center gap-2">
+              <span class="sidebar-text">Laporan Jadwal Instalasi</span>
+            </a>
+            <a href="laporan-status-instalasi.html" class="d-flex align-items-center gap-2">
+              <span class="sidebar-text">Laporan Status Instalasi</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 📦 MAIN WRAPPER (semua konten kanan) -->
+  <div class="main-wrapper flex-grow-1 d-flex flex-column">
+    <!-- 🔒 NAVBAR (Jangan diubah) -->
+    <div class="d-flex bg-light p-3 justify-content-between align-items-center mb-3">
+      <h4 class="fw-bold">Dashboard Instalasi IFP</h4>
+      <div class="dropdown">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#00A4EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="#00A4EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          User group
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Ubah password</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 📍 CONTENT AREA -->
+    <div class="content-area px-3 py-3">
+      <!-- 🔒 BREADCRUMB (Jangan diubah) -->
+      <div class="d-flex mb-3 justify-content-between align-items-center">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="jadwal-instalasi.html">Jadwal Instalasi</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Rincian Jadwal Instalasi
+            </li>
+          </ol>
+        </nav>
+        <button class="btn btn-refresh btn-primary">
+          <i class="bi bi-arrow-counterclockwise"></i>
+        </button>
+      </div>
+
+      <!-- ✅ MAIN CONTENT (Bagian yang bisa diubah-ubah) -->
+      <div id="main-content">
+        <!-- Di sinilah isi dashboard kamu masuk, bisa diganti-ganti -->
+        <!-- Contoh: card, chart, tabel, dll -->
+
+        <!-- Contoh konten -->
+        <div class="row mb-4">
+          <div class="p-3">
+            <div class="bg-body p-3 rounded-2 shadow-sm">
+              <!-- Filter Section -->
+              <div class="filter-section">
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                      <a href="jadwal-instalasi.html" class="btn btn-primary">
+                        <i class="bi bi-chevron-left me-2"></i>Kembali
+                      </a>
+                      <p>Tambah Jadwal Instalasi</p>
+                    </div>
+                  </div>
+                </div>
+
+                <form>
+                  <div class="row g-3">
+                    <!-- First Row -->
+                    <p class="fw-bold border-bottom">Detil Instansi</p>
+
+                    <div id="instansiDetail" class="row g-3">
+                      <div class="col-md-12">
+                        <label for="npsn">NPSN</label>
+                        <input id="npsn" type="text" class="form-control" value="AA20396892025" />
+                      </div>
+                      <div class="col-md-12">
+                        <label for="nama_instansi">Nama</label>
+                        <input id="nama_instansi" type="text" class="form-control" value="SD NEGERI ALUE BATEE" />
+                      </div>
+                      <div class="col-md-1">
+                        <label for="status">Status</label>
+                        <input id="status" type="text" class="form-control" value="Negri" />
+                      </div>
+                      <div class="col-md-1">
+                        <label for="jenjang">Jenjang</label>
+                        <input id="jenjang" type="text" class="form-control" value="SD" />
+                      </div>
+                      <div class="col-md-1">
+                        <label for="bentuk">Bentuk</label>
+                        <input id="bentuk" type="text" class="form-control" value="SD" />
+                      </div>
+                      <div class="col-md-1">
+                        <label for="provinsi">Provinsi</label>
+                        <input id="provinsi" type="text" class="form-control" value="ACEH" />
+                      </div>
+                      <div class="col-md-2">
+                        <label for="kabupaten">Kabupaten</label>
+                        <input id="kabupaten" type="text" class="form-control" value="Kab. Aceh Barat" />
+                      </div>
+                      <div class="col-md-2">
+                        <label for="kabupaten2">Kabupaten</label>
+                        <input id="kabupaten2" type="text" class="form-control" value="Kab. Aceh Barat" />
+                      </div>
+                      <div class="col-md-2">
+                        <label for="kecamatan">Kecamatan</label>
+                        <input id="kecamatan" type="text" class="form-control" value="Arongan Lambek" />
+                      </div>
+                      <div class="col-md-2">
+                        <label for="kelurahan">Kelurahan/Desa</label>
+                        <input id="kelurahan" type="text" class="form-control" value="Alue Batee" />
+                      </div>
+                      <div class="col-md-10">
+                        <label for="alamat">Alamat</label>
+                        <input id="alamat" type="text" class="form-control" value="SD NEGERI ALUE BATEE, Alue Batee RT. / RW. KABUPATEN ACEH BARAT" />
+                      </div>
+                      <div class="col-md-2">
+                        <label for="kode_pos">Kode Pos</label>
+                        <input id="kode_pos" type="text" class="form-control" value="77121" />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="pic">NAMA PIC</label>
+                        <input id="pic" type="text" class="form-control" value="Alue Batee" />
+                      </div>
+                      <div class="col-md-3">
+                        <label for="nomor_telepon">NOMOR TELEPON</label>
+                        <input id="nomor_telepon" type="text" class="form-control" value="Nomor Telepon" />
+                      </div>
+                      <div class="col-md-3">
+                        <label for="email">ALAMAT EMAIL</label>
+                        <input id="email" type="text" class="form-control" value="agam.riz@gmail.com" />
+                      </div>
+                    </div>
+
+                    <p class="fw-bold border-bottom">Detil Teknisi</p>
+                    <div class="row mt-2">
+                      <div class="col-md-6">
+                        <label for="nama_teknisi">Nama Teknisi</label>
+                        <input id="nama_teknisi" type="text" class="form-control" value="ANDRI" />
+                      </div>
+                      <div class="col-md-3">
+                        <label for="no_telepon">No Telepon</label>
+                        <input id="no_telepon" type="text" class="form-control" value="08123234568" />
+                      </div>
+                      <div class="col-md-3">
+                        <label for="tanggal_instalasi">Tanggal Instalasi</label>
+                        <input id="tanggal_instalasi" type="date" class="form-control" />
+                      </div>
+
+                      <div id="penyelesaianInstalasi" class="row mt-3 d-none">
+                        <p class="fw-bold border-bottom">Detil Penyelesaian Instalasi</p>
+                        <div class="col-md-3 mt-3">
+                          <label for="tanggal_instalasi2">Tanggal Instalasi</label>
+                          <input id="tanggal_instalasi2" type="date" class="form-control" />
+                        </div>
+                        <div class="col-md-12 mt-3">
+                          <p>Foto Bukti</p>
+                          <div class="d-flex mt-3 gap-3 justify-content-between align-items-center">
+                            <figure>
+                              <img src="assets/img/Unit Awal.png" alt="Unit Awal" style="width:100%">
+                              <figcaption class="text-center mt-2">Unit Awal</figcaption>
+                            </figure>
+                            <figure>
+                              <img src="assets/img/Serial Number.png" alt="Serial Number" style="width:100%">
+                              <figcaption class="text-center mt-2">Serial Number</figcaption>
+                            </figure>
+                            <figure>
+                              <img src="assets/img/Unit Terinstal.png" alt="Unit Terinstall" style="width:100%">
+                              <figcaption class="text-center mt-2">Unit Terinstall</figcaption>
+                            </figure>
+                            <figure>
+                              <img src="assets/img/Instansi.png" alt="Instansi" style="width:100%">
+                              <figcaption class="text-center mt-2">Instansi</figcaption>
+                            </figure>
+                            <figure>
+                              <img src="assets/img/BAST.png" alt="BAST" style="width:100%">
+                              <figcaption class="text-center mt-2">BAST</figcaption>
+                            </figure>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mt-3">
+                        <div class="col-md-12">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-2">
+                              <!-- Update Button -->
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#updateModal" class="btn btn-primary">
+                                <i class="bi bi-file-earmark me-2"></i>Update
+                              </button>
+
+                              <!-- Update Modal -->
+                              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="updateModalLabel">Konfirmasi Update</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p>Data akan diubah.<br />Pastikan data yang Anda masukkan sudah sesuai</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                      <button type="button" class="btn btn-primary">Lanjut</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <!-- Selesai Button -->
+                              <button type="button" data-bs-toggle="modal" data-bs-target="#selesaiModal" class="btn btn-success">
+                                <i class="bi bi-check-circle me-2"></i>Instalasi Selesai
+                              </button>
+
+                              <!-- Selesai Modal -->
+                              <div class="modal fade" id="selesaiModal" tabindex="-1" aria-labelledby="selesaiModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h1 class="modal-title fs-5" id="selesaiModalLabel">Bukti Penyelesaian Instalasi</h1>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <p class="mb-3">Mohon untuk melengkapi data berikut sebelum menyelesaikan jadwal instalasi</p>
+                                      <form class="mb-3 mt-3">
+                                        <div class="mb-3">
+                                          <label for="tanggal_penyelesaian" class="form-label">Tanggal Penyelesaian Instalasi</label>
+                                          <input class="form-control" type="date" id="tanggal_penyelesaian">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="bast" class="form-label">Upload BAST</label>
+                                          <input class="form-control form-control-sm" id="bast" type="file">
+                                          <div class="form-text" id="basic-addon4">Maximum file size 1Mb</div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="unit_awal" class="form-label">Upload Foto - Unit Awal</label>
+                                          <input class="form-control form-control-sm" id="unit_awal" type="file">
+                                          <div class="form-text" id="basic-addon5">Maximum file size 1Mb</div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="serial_number" class="form-label">Upload Foto - Serial Number</label>
+                                          <input class="form-control form-control-sm" id="serial_number" type="file">
+                                          <div class="form-text" id="basic-addon6">Maximum file size 1Mb</div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="unit_terinstall" class="form-label">Upload Foto - Unit Terinstall</label>
+                                          <input class="form-control form-control-sm" id="unit_terinstall" type="file">
+                                          <div class="form-text" id="basic-addon7">Maximum file size 1Mb</div>
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="instansi" class="form-label">Upload Foto - Instansi</label>
+                                          <input class="form-control form-control-sm" id="instansi" type="file">
+                                          <div class="form-text" id="basic-addon8">Maximum file size 1Mb</div>
+                                        </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                      <button data-bs-dismiss="modal" type="button" class="btn btn-primary btn-simpan">Simpan</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <!-- Delete Button -->
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal" class="btn btn-dark">
+                              <i class="bi bi-trash me-2"></i>Delete
+                            </button>
+
+                            <!-- Delete Modal -->
+                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="deleteModalLabel">Konfirmasi Delete</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Data akan dihapus dan <br>Anda akan kembali ke halaman sebelumnya</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-primary">Lanjut</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    
+<script>
+  document.querySelector('.btn-simpan').addEventListener('click', function (e) {
+    e.preventDefault(); // mencegah form submit jika tombol dalam form
+    document.getElementById('penyelesaianInstalasi').classList.remove('d-none');
+    
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".clickable-row").forEach(function (row) {
+      row.addEventListener("click", function () {
+        window.location.href = row.dataset.href;
+      });
+    });
+  });
+</script>
+
+    
+    <script>
+      const toggleBtn = document.getElementById("toggleSidebar");
+      const sidebar = document.getElementById("sidebar");
+      const icon = toggleBtn.querySelector("i");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+        icon.classList.toggle("rotate-icon");
+        icon.classList.toggle("bi-arrow-left");
+        icon.classList.toggle("bi-arrow-right");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar");
+        const toggleBtn = document.getElementById("toggleSidebar");
+
+        // Toggle sidebar collapse/expand
+        toggleBtn.addEventListener("click", () => {
+          sidebar.classList.toggle("sidebar-collapsed");
+
+          // Close all accordion items when collapsing sidebar
+          if (sidebar.classList.contains("sidebar-collapsed")) {
+            const accordionCollapses = document.querySelectorAll(
+              ".accordion-collapse"
+            );
+            accordionCollapses.forEach((collapse) => {
+              const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+              if (bsCollapse) {
+                bsCollapse.hide();
+              }
+            });
+          }
+        });
+
+        // Optional: Add keyboard shortcut (Ctrl + B)
+        document.addEventListener("keydown", (e) => {
+          if (e.ctrlKey && e.key === "b") {
+            e.preventDefault();
+            sidebar.classList.toggle("sidebar-collapsed");
+
+            if (sidebar.classList.contains("sidebar-collapsed")) {
+              const accordionCollapses = document.querySelectorAll(
+                ".accordion-collapse"
+              );
+              accordionCollapses.forEach((collapse) => {
+                const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                if (bsCollapse) {
+                  bsCollapse.hide();
+                }
+              });
+            }
+          }
+        });
+      });
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+  </body>
+</html>

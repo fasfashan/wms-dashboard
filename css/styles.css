@@ -1,9 +1,159 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+body.login {
   background: url("../assets/img/bg-login.jpg") no-repeat center center;
   background-size: cover;
 }
+p,
+ol {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  min-height: 100vh; /* atau height: 100% kalau html dan body udah diset */
+}
+body {
+  background-color: #ededed;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Content area adjustment */
+#mainContent {
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+}
+
+#sidebar.sidebar-collapsed ~ #mainContent {
+  margin-left: 60px;
+}
+.accordion-button,
+.accordion-button:not(.collapsed) {
+  background-color: #e5e5e5;
+  border: none;
+  margin-bottom: 4px;
+}
+/* Accordion styles for sidebar */
+#sidebarAccordion.accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-border-color: transparent;
+  --bs-accordion-border-width: 0;
+}
+
+#sidebarAccordion .accordion-item {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 4px;
+}
+
+#sidebarAccordion .accordion-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0px;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+#sidebarAccordion .accordion-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+#sidebarAccordion .accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+#sidebarAccordion .accordion-button:not(.collapsed) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+#sidebarAccordion .accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transition: transform 0.3s ease;
+}
+
+#sidebarAccordion .accordion-body {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+#sidebarAccordion .accordion-body a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: block;
+  padding: 0.4rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 0.9em;
+}
+
+#sidebarAccordion .accordion-body a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+th {
+  font-size: 12px !important;
+}
+#sidebar.sidebar-collapsed {
+  width: 60px;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+/* Hide accordion when sidebar is collapsed */
+#sidebar.sidebar-collapsed .accordion {
+  display: none;
+}
+#sidebar.sidebar-collapsed .accordion,
+#sidebar.sidebar-collapsed .nav {
+  display: none;
+}
+.nav-link.active {
+  border-left: 2px solid rgba(49, 190, 255, 1) !important;
+}
+.accordion-button.active {
+  border-left: 2px solid rgba(49, 190, 255, 1) !important;
+}
+.progress-circle {
+  width: 54px;
+  height: 54px;
+  position: relative;
+}
+
+.progress-circle svg {
+  transform: rotate(-90deg);
+}
+
+.progress-circle .icon-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+td {
+  font-size: 12px;
+}
+.badge {
+  border-radius: 1000px;
+  width: 10px;
+  height: 16px;
+}
+.badge-text {
+  font-size: 12px;
+}
 input::placeholder {
   color: rgba(205, 205, 205, 1) !important;
+}
+.breadcrumb-item.active {
+  color: rgba(205, 205, 205, 1) !important;
+}
+.breadcrumb-item a {
+  text-decoration: none;
+}
+
+.card.primary {
+  background-color: rgba(0, 164, 239, 1);
 }
 .bg-overlay {
   backdrop-filter: blur(4px);
@@ -35,4 +185,211 @@ button[disabled] {
 }
 #togglePassword:hover {
   background-color: transparent;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+#donutChart,
+#barChart {
+  max-height: 300px;
+}
+.dropdown-toggle {
+  color: rgba(0, 164, 239, 1);
+  border: none;
+  background-color: transparent;
+}
+.nav-link-custom {
+  color: white !important;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.nav-link-custom.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.filter-section {
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.status-installed {
+  color: #00d084;
+}
+.table-container {
+  background: white;
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+.table thead th {
+  border-bottom: 2px solid #dee2e6;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+.pagination-info {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+.active > .page-link,
+.page-link.active {
+  background-color: #dddddd !important;
+}
+.page-link {
+  color: #404040 !important;
+}
+.btn-primary {
+  background: #00a6aa;
+  border: none;
+  padding: 8px 20px;
+}
+.btn-primary:disabled {
+  background-color: #cdcdcd;
+  color: white;
+}
+input[type="file"]::file-selector-button {
+  background-color: #00a6aa; /* Warna bg yang diinginkan */
+  color: white;
+  border: none;
+  padding: 6px 12px;
+
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #009294;
+}
+.form-select,
+.form-control {
+  border: 1px solid #ced4da;
+  font-size: 0.9em;
+}
+.status-badge {
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.badge.bg-success {
+  background-color: #22c55e !important;
+}
+.status-ready {
+  color: #007bff;
+}
+.status-delivery {
+  color: #c084fc;
+}
+.status-delivered {
+  color: #fbbf24;
+}
+.status-installed {
+  color: #22c55e;
+}
+.form-control[readonly] {
+  background-color: #f8f9fa;
+}
+.breadcrumb-item a {
+  color: #00a4ef !important;
+}
+tr {
+  cursor: pointer;
+}
+.btn-refresh {
+  background-color: #00a6aa;
+}
+#donutChart,
+#barChart {
+  max-height: 1000px;
+}
+#chartStatus {
+  max-height: 550px !important;
+  overflow-y: auto;
+}
+.btn-refresh:hover {
+  background-color: #018082 !important;
+}
+#sidebar {
+  width: 250px;
+  transition: width 0.3s ease;
+
+  flex-shrink: 0; /* Biar nggak nyusut waktu layout ngeresize */
+}
+
+#sidebar.sidebar-collapsed {
+  width: 60px;
+}
+
+#sidebar.sidebar-collapsed .sidebar-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: opacity 0.2s ease, width 0.2s ease;
+}
+
+#sidebar.sidebar-collapsed .nav-link {
+  justify-content: center;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+#sidebar.sidebar-collapsed .chevron-icon {
+  display: none;
+}
+
+#sidebar.sidebar-collapsed #brandText {
+  display: none;
+}
+
+.sidebar-text {
+  transition: opacity 0.3s ease, width 0.3s ease;
+  white-space: nowrap;
+}
+
+#toggleSidebar {
+  background-color: #343a40;
+  border: 1px solid white;
+  transition: transform 0.3s ease;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+#sidebar.sidebar-collapsed #arrowIcon {
+  transform: rotate(180deg);
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+
+  margin-bottom: 4px;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Content area adjustment */
+#mainContent {
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+}
+
+#sidebar.sidebar-collapsed ~ #mainContent {
+  margin-left: 60px;
+}
+
+/* Hide accordion when sidebar is collapsed */
+#sidebar.sidebar-collapsed .accordion {
+  display: none;
+}
+#sidebar.sidebar-collapsed .accordion,
+#sidebar.sidebar-collapsed .nav {
+  display: none;
+}
+.nav-link.active {
+  border-left: 2px solid rgba(49, 190, 255, 1) !important;
 }
