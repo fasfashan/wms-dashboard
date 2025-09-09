@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body class="d-flex">
+    <!-- 🔒 SIDEBAR (Jangan diubah) -->
+    <aside
+      id="sidebar"
+      class="bg-dark text-white d-flex flex-column p-3"
+    >
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <img
+          src="../assets/img/logo.png"
+          id="brandText"
+          class="img-fluid"
+          style="max-height: 40px; max-width: 100px"
+        />
+
+        <button
+          id="toggleSidebar"
+          class="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+        >
+          <i id="arrowIcon" class="bi bi-arrow-left"></i>
+        </button>
+      </div>
+
+      <ul class="nav flex-column gap-1">
+        <li class="nav-item active">
+          <a
+            href="index.html"
+            class="nav-link  text-white d-flex align-items-center gap-2"
+            title="Dashboard"
+          >
+            <i class="bi bi-house-door"></i>
+            <span class="sidebar-text">Dashboard</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Accordion for Aktivitas -->
+      <div class="accordion" id="sidebarAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+  <button
+    class="accordion-button active d-flex align-items-center gap-2"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapseAktivitas"
+    aria-expanded="true"
+    aria-controls="collapseAktivitas">
+    
+    <i class="bi bi-check2-square"></i>
+    <span class="sidebar-text">Activity</span>
+  </button>
+</h2>
+<div id="collapseAktivitas" class="accordion-collapse collapse show active">
+  <div class="accordion-body">
+    <a
+                href="jadwal-instalasi.html"
+                class="d-flex align-items-center gap-2"
+              >
+                <span class="sidebar-text">Installation Schedule</span>
+              </a>
+  </div>
+</div>
+
+          
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button  collapsed d-flex align-items-center gap-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseLaporan"
+              aria-expanded="false"
+              aria-controls="collapseLaporan"
+            >
+              <i class="bi bi-bar-chart-line"></i>
+              <span class="sidebar-text">Report</span>
+            </button>
+          </h2>
+          <div
+            id="collapseLaporan"
+            class="accordion-collapse collapse"
+            data-bs-parent="#sidebarAccordion"
+          >
+            <div class="accordion-body">
+              <a
+                href="laporan-jadwal-instalasi.html"
+                class="d-flex align-items-center gap-2"
+              >
+                <span class="sidebar-text">Laporan Jadwal Instalasi</span>
+              </a>
+              <a
+                href="laporan-status-instalasi.html"
+                class="d-flex align-items-center gap-2"
+              >
+                <span class="sidebar-text">Laporan Status Instalasi</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 📦 MAIN WRAPPER (semua konten kanan) -->
+    <div class="main-wrapper flex-grow-1 d-flex flex-column">
+      <!-- 🔒 NAVBAR (Jangan diubah) -->
+     <div
+          class="d-flex bg-light p-3 justify-content-between align-items-center mb-3"
+        >
+          <h4 class="fw-bold">Dashboard Instalasi IFP</h4>
+          <div class="dropdown">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                stroke="#00A4EF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                stroke="#00A4EF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <button
+              class="dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              User group
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Ubah password</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- 📍 CONTENT AREA -->
+      <div class="content-area px-3 py-3">
+        <!-- 🔒 BREADCRUMB (Jangan diubah) -->
+         <div class="d-flex mb-3 justify-content-between align-items-center">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="jadwal-instalasi.html">Installation Schedule</a></li>
+             
+                <li class="breadcrumb-item active" aria-current="page">
+                  Add Installation Schedule
+                </li>
+              </ol>
+            </nav>
+            <button class="btn btn-refresh btn-primary"> <i class="bi bi-arrow-counterclockwise"></i></button>
+          </div>
+
+        <!-- ✅ MAIN CONTENT (Bagian yang bisa diubah-ubah) -->
+        <div id="main-content">
+          <!-- Di sinilah isi dashboard kamu masuk, bisa diganti-ganti -->
+          <!-- Contoh: card, chart, tabel, dll -->
+
+          <!-- Contoh konten -->
+          <div class="row mb-4">
+            <div class="p-3">
+          
+              
+          
+            <div  class="bg-body p-3 rounded-2 shadow-sm">
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center gap-3">
+
+                              <a href="jadwal-instalasi.html" class="btn btn-primary"><i class="bi bi-chevron-left me-2"></i>Back</a>
+                              <p>Add Installation Schedule</p>
+                        </div>
+                    </div>
+                </div>
+              <form>
+                <div class="row g-3">
+                  <!-- First Row -->
+                   <p class="fw-bold  border-bottom">Institute Detail</p>
+                  <div class="col-md-12">
+                    <label for="npsn">NPSN</label>
+                    <input
+                    id="npsn"
+                      type="text"
+                      class="form-control"
+                      placeholder="NPSN"
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <button class="btn btn-primary btn-search" type="button"><i class="bi me-2 bi-search"></i>Search Institute</button>
+                  </div>
+                  <div id="instansiDetail" class="row g-3 d-none">
+                    <div class="col-md-12">
+                    <label for="nama_instansi">Name</label>
+                    <input
+                    id="nama_instansi"
+                      type="text"
+                      class="form-control"
+                      value="SD NEGERI ALUE BATEE"
+                      
+                    />
+                  </div>
+                  <div class="col-md-1">
+                    <label for="status">Status</label>
+                    <input
+                    id="status"
+                      type="text"
+                      class="form-control"
+                      value="Negri"
+                      
+                    />
+                  </div>
+                  <div class="col-md-1">
+                    <label for="jenjang">Jenjang</label>
+                    <input
+                    id="jenjang"
+                      type="text"
+                      class="form-control"
+                      value="SD"
+                      
+                    />
+                  </div>
+                  <div class="col-md-1">
+                    <label for="bentuk">Bentuk</label>
+                    <input
+                    id="bentuk"
+                      type="text"
+                      class="form-control"
+                      value="SD"
+                      
+                    />
+                  </div>
+                  <div class="col-md-2">
+                    <label for="provinsi">Province</label>
+                    <input
+                    id="provinsi"
+                      type="text"
+                      class="form-control"
+                      value="ACEH"
+                      
+                    />
+                  </div>
+                  <div class="col-md-2">
+                    <label for="kabupaten">Regency</label>
+                    <input
+                    id="kabupaten"
+                      type="text"
+                      class="form-control"
+                      value="ACEH"
+                      
+                    />
+                  </div>
+                 
+                  <div class="col-md-2">
+                    <label for="kabupaten">District</label>
+                    <input
+                    id="kabupaten"
+                      type="text"
+                      class="form-control"
+                      value="Kab. Aceh Barat"
+                      
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="kecamatan">Village</label>
+                    <input
+                    id="kecamatan"
+                      type="text"
+                      class="form-control"
+                      value="Arongan Lambek"
+                      
+                    />
+                  </div>
+                 
+                  <div class="col-md-10">
+                    <label for="alamat">Address</label>
+                    <input
+                    id="alamat"
+                      type="text"
+                      class="form-control"
+                      value="SD NEGERI ALUE BATEE, Alue Batee RT. / RW. KABUPATEN ACEH BARAT"
+                      
+                    />
+                  </div>
+                   <div class="col-md-2">
+                    <label for="kode_pos">Post Code</label>
+                    <input
+                    id="kode_pos"
+                      type="text"
+                      class="form-control"
+                      value="77121"
+                      
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="pic">PIC Name</label>
+                    <input
+                    id="pic"
+                      type="text"
+                      class="form-control"
+                      value="Alue Batee"
+                      
+                    />
+                  </div>
+                    
+                     
+                  <div class="col-md-3">
+                    <label for="nomor_telepon">Telephone Number</label>
+                    <input
+                    id="nomor_telepon"
+                      type="text"
+                      class="form-control"
+                      value="Nomor Telepon"
+                      
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="email">Email Address</label>
+                    <input
+                    id="email"
+                      type="text"
+                      class="form-control"
+                      value="agam.riz@gmail.com"
+                      
+                    />
+                  </div>
+                  </div>
+                   <p class="fw-bold  border-bottom">Technician Details</p>
+                   <div class="row mt-2">
+                    <div class="col-md-6">
+                    <label for="nama_teknisi">Technician Name</label>
+                    <input
+                    id="nama_teknisi"
+                      type="text"
+                      class="form-control"
+                      placeholder="Technician Name"
+                      value="ANDRI"
+                      
+                    />
+                  </div>
+                    <div class="col-md-3">
+                    <label for="no_telepon">Telephone Number</label>
+                    <input
+                    id="no_telepon"
+                      type="text"
+                      class="form-control"
+                      placeholder="No Telepon"
+                      value="08123234568"
+                    />
+                  </div>
+                    <div class="col-md-3">
+                    <label for="tanggal_instalasi">Installation Date</label>
+                    <input
+                    id="tanggal_instalasi"
+                      type="date"
+                      class="form-control"
+                      
+                      
+                    />
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-md-12">
+                      <div class="d-flex justify-content-between align-items-center">
+                        
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#saveModal" id="btn-save" disabled class="btn btn-primary"><i class="bi bi-file-earmark-check-fill me-2"></i>Simpan</button>
+                        <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Save Confirmation</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <p>Please make sure your input is already correct</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+                        <div class="d-flex gap-2">
+                            <button type="button"  data-bs-toggle="modal" data-bs-target="#resetModal"   class="btn btn-warning"><i class="bi bi-arrow-counterclockwise me-2"></i>Reset</button>
+                                            <div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="resetModalLabel">Clear Confirmation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p>Your input data will be deleted</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                          <button type="button" class="btn btn-primary">Lanjut</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                                            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"  class="btn btn-dark"><i class="bi bi-trash me-2"></i>Delete</button>
+                                                            <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="deleteModalLabel">Delete Confirmation</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p>Your data will be deleted and <br>
+you will be back to the previous page</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary">Continue</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                   </div>
+                </div>
+                
+
+              </form>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script>
+  document.querySelector('.btn-search').addEventListener('click', function (e) {
+    e.preventDefault(); // mencegah form submit jika tombol dalam form
+    document.getElementById('instansiDetail').classList.remove('d-none');
+    document.getElementById('btn-save').disabled = false; // mengaktifkan tombol simpan
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".clickable-row").forEach(function (row) {
+      row.addEventListener("click", function () {
+        window.location.href = row.dataset.href;
+      });
+    });
+  });
+</script>
+
+    
+    <script>
+      const toggleBtn = document.getElementById("toggleSidebar");
+      const sidebar = document.getElementById("sidebar");
+      const icon = toggleBtn.querySelector("i");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+        icon.classList.toggle("rotate-icon");
+        icon.classList.toggle("bi-arrow-left");
+        icon.classList.toggle("bi-arrow-right");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar");
+        const toggleBtn = document.getElementById("toggleSidebar");
+
+        // Toggle sidebar collapse/expand
+        toggleBtn.addEventListener("click", () => {
+          sidebar.classList.toggle("sidebar-collapsed");
+
+          // Close all accordion items when collapsing sidebar
+          if (sidebar.classList.contains("sidebar-collapsed")) {
+            const accordionCollapses = document.querySelectorAll(
+              ".accordion-collapse"
+            );
+            accordionCollapses.forEach((collapse) => {
+              const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+              if (bsCollapse) {
+                bsCollapse.hide();
+              }
+            });
+          }
+        });
+
+        // Optional: Add keyboard shortcut (Ctrl + B)
+        document.addEventListener("keydown", (e) => {
+          if (e.ctrlKey && e.key === "b") {
+            e.preventDefault();
+            sidebar.classList.toggle("sidebar-collapsed");
+
+            if (sidebar.classList.contains("sidebar-collapsed")) {
+              const accordionCollapses = document.querySelectorAll(
+                ".accordion-collapse"
+              );
+              accordionCollapses.forEach((collapse) => {
+                const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                if (bsCollapse) {
+                  bsCollapse.hide();
+                }
+              });
+            }
+          }
+        });
+      });
+    </script>
+    <script src="../js/script.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

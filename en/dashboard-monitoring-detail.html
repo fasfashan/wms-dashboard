@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style></style>
+  </head>
+  <body class="d-flex">
+    <!-- 🔒 SIDEBAR (Jangan diubah) -->
+    <aside
+      id="sidebar"
+      class="bg-dark text-white d-flex flex-column p-3"
+    >
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <img
+          src="../assets/img/logo.png"
+          id="brandText"
+          class="img-fluid"
+          style="max-height: 40px; max-width: 100px"
+        />
+
+        <button
+          id="toggleSidebar"
+          class="btn btn-outline-light btn-sm rounded-circle d-flex align-items-center justify-content-center"
+        >
+          <i id="arrowIcon" class="bi bi-arrow-left"></i>
+        </button>
+      </div>
+
+      <ul class="nav flex-column gap-1">
+        <li class="nav-item active">
+          <a
+            href="index.html"
+            class="nav-link active text-white d-flex align-items-center gap-2"
+            title="Dashboard"
+          >
+            <i class="bi bi-house-door"></i>
+            <span class="sidebar-text">Dashboard</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Accordion for Aktivitas -->
+      <div class="accordion" id="sidebarAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed d-flex align-items-center gap-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseAktivitas"
+              aria-expanded="false"
+              aria-controls="collapseAktivitas"
+            >
+              <i class="bi bi-check2-square"></i>
+              <span class="sidebar-text">Activity</span>
+            </button>
+          </h2>
+          <div
+            id="collapseAktivitas"
+            class="accordion-collapse collapse"
+            data-bs-parent="#sidebarAccordion"
+          >
+            <div class="accordion-body">
+              <a
+                href="jadwal-instalasi.html"
+                class="d-flex align-items-center gap-2"
+              >
+                <span class="sidebar-text">Installation Schedule</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed d-flex align-items-center gap-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseLaporan"
+              aria-expanded="false"
+              aria-controls="collapseLaporan"
+            >
+              <i class="bi bi-bar-chart-line"></i>
+              <span class="sidebar-text">Laporan</span>
+            </button>
+          </h2>
+          <div
+            id="collapseLaporan"
+            class="accordion-collapse collapse"
+            data-bs-parent="#sidebarAccordion"
+          >
+            <div class="accordion-body">
+              <a
+                href="laporan-jadwal-instalasi.html"
+                class="d-flex align-items-center gap-2"
+              >
+                <span class="sidebar-text">Laporan Jadwal Instalasi</span>
+              </a>
+              <a
+                href="laporan-status-instalasi.html"
+                class="d-flex align-items-center gap-2"
+              >
+                <span class="sidebar-text">Laporan Status Instalasi</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 📦 MAIN WRAPPER (semua konten kanan) -->
+    <div class="main-wrapper flex-grow-1 d-flex flex-column">
+      <!-- 🔒 NAVBAR (Jangan diubah) -->
+     <div
+          class="d-flex bg-light p-3 justify-content-between align-items-center mb-3"
+        >
+          <h4 class="fw-bold">Dashboard Instalasi IFP</h4>
+          <div class="dropdown">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                stroke="#00A4EF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                stroke="#00A4EF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <button
+              class="dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              User group
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Ubah password</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- 📍 CONTENT AREA -->
+      <div class="content-area px-3 py-3">
+        <!-- 🔒 BREADCRUMB (Jangan diubah) -->
+         <div class="d-flex mb-3 justify-content-between align-items-center">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+             
+                <li class="breadcrumb-item active" aria-current="page">
+                  Monitoring
+                </li>
+              </ol>
+            </nav>
+            <button class="btn btn-refresh btn-primary"> <i class="bi bi-arrow-counterclockwise"></i></button>
+          </div>
+
+        <!-- ✅ MAIN CONTENT (Bagian yang bisa diubah-ubah) -->
+        <div id="main-content">
+          <!-- Di sinilah isi dashboard kamu masuk, bisa diganti-ganti -->
+          <!-- Contoh: card, chart, tabel, dll -->
+
+          <!-- Contoh konten -->
+          <div class="row mb-4">
+            <div class="p-3">
+          
+              
+          
+            <div  class="bg-body p-3 rounded-2 shadow-sm">
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-center gap-3">
+
+                            <a href="dashboard-monitoring.html" class="btn btn-primary"><i class="bi bi-chevron-left me-2"></i>Back</a>
+                            <p>Detail</p>
+                        </div>
+                    </div>
+                </div>
+                <form>
+                  <div class="row g-3">
+                    <p class="fw-bold  border-bottom">Institute Detail</p>
+                    <!-- First Row -->
+                  <div class="col-md-12">
+                    <label for="nama_instansi">Name</label>
+                    <input
+                    id="nama_instansi"
+                      type="text"
+                      class="form-control"
+                      value="SD NEGERI ALUE BATEE"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-1">
+                    <label for="status">Status</label>
+                    <input
+                    id="status"
+                      type="text"
+                      class="form-control"
+                      value="Negri"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-1">
+                    <label for="jenjang">Jenjang</label>
+                    <input
+                    id="jenjang"
+                      type="text"
+                      class="form-control"
+                      value="SD"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-1">
+                    <label for="bentuk">Bentuk</label>
+                    <input
+                    id="bentuk"
+                      type="text"
+                      class="form-control"
+                      value="SD"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-2">
+                    <label for="provinsi">Province</label>
+                    <input
+                    id="provinsi"
+                      type="text"
+                      class="form-control"
+                      value="ACEH"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-2">
+                    <label for="kabupaten">Regency</label>
+                    <input
+                    id="kabupaten"
+                      type="text"
+                      class="form-control"
+                      value="Kab. Aceh Barat"
+                      readonly
+                    />
+                  </div>
+                  
+                  <div class="col-md-2">
+                    <label for="kecamatan">District</label>
+                    <input
+                    id="kecamatan"
+                      type="text"
+                      class="form-control"
+                      value="Arongan Lambek"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="kelurahan">Village</label>
+                    <input
+                    id="kelurahan"
+                      type="text"
+                      class="form-control"
+                      value="Alue Batee"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-10">
+                    <label for="alamat">Address</label>
+                    <input
+                    id="alamat"
+                      type="text"
+                      class="form-control"
+                      value="SD NEGERI ALUE BATEE, Alue Batee RT. / RW. KABUPATEN ACEH BARAT"
+                      readonly
+                    />
+                  </div>
+                   <div class="col-md-2">
+                    <label for="kode_pos">Pos Code</label>
+                    <input
+                    id="kode_pos"
+                      type="text"
+                      class="form-control"
+                      value="77121"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="pic">PIC Name</label>
+                    <input
+                    id="pic"
+                      type="text"
+                      class="form-control"
+                      value="Alue Batee"
+                      readonly
+                    />
+                  </div>
+                    
+                     
+                  <div class="col-md-3">
+                    <label for="nomor_telepon">Telephone Number</label>
+                    <input
+                    id="nomor_telepon"
+                      type="text"
+                      class="form-control"
+                      value="Nomor Telepon"
+                      readonly
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="email">Email Address</label>
+                    <input
+                    id="email"
+                      type="text"
+                      class="form-control"
+                      value="agam.riz@gmail.com"
+                      readonly
+                    />
+                  </div>
+                
+                   <p class="fw-bold mb-3 border-bottom">Process Status </p>
+                   <div class="col-md-3">
+                    <label for="prioritas">Priority</label>
+                    <input
+                    id="prioritas"
+                      type="text"
+                      class="form-control"
+                      value="Regular"
+                      readonly
+                    />
+                  </div>
+                   <div class="col-md-3">
+                    <label for="batch">Batch</label>
+                    <input
+                    id="batch"
+                      type="text"
+                      class="form-control"
+                      value="01"
+                      readonly
+                    />
+                  </div>
+                   <div class="col-md-3">
+                    <label for="shipment_no">Shipment No</label>
+                    <input
+                    id="shipment_no"
+                      type="text"
+                      class="form-control"
+                      value="AB23450886"
+                      readonly
+                    />
+                  </div>
+                   <div class="col-md-3">
+                    <label for="tracking_no">Tracking No</label>
+                    <input
+                    id="tracking_no"
+                      type="text"
+                      class="form-control"
+                      value="CCD23450886"
+                      readonly
+                    />
+                  </div>
+                 
+                </div>
+               
+              </form>
+              <div class="accordion mt-3 accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+       <span class="me-2" style="color: #31BEFF;">Ready</span>
+                    <input
+                    id="tracking_no"
+                      type="text"
+                      class="form-control me-3"
+                      value="01-07-2025 15:45"
+                      readonly
+                    />
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body"> 
+        <div class="d-flex border rounded-2 p-2 gap-2 align-items-center">
+          
+          <label style="text-wrap:nowrap" for="nomor_resi">Nomor Resi</label><input
+                      id="nomor_resi"
+                        type="text"
+                        class="form-control me-3"
+                        value="3245AB205688"
+                        readonly
+                      /></div>
+        <div class="d-flex border rounded-2 mt-2 p-2 gap-2 align-items-center">
+          
+          <label style="text-wrap:nowrap" for="npsn"></label><input
+                      id="npsn"
+                        type="text"
+                        class="form-control me-3"
+                        value="01-07-2025 15:45"
+                        readonly
+                      /></div>
+        </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        Accordion Item #2
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    </div>
+  </div>
+</div>
+            </div>
+
+            <!-- Data Table -->
+            
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".clickable-row").forEach(function (row) {
+      row.addEventListener("click", function () {
+        window.location.href = row.dataset.href;
+      });
+    });
+  });
+</script>
+
+    
+    <script>
+      const toggleBtn = document.getElementById("toggleSidebar");
+      const sidebar = document.getElementById("sidebar");
+      const icon = toggleBtn.querySelector("i");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+        icon.classList.toggle("rotate-icon");
+        icon.classList.toggle("bi-arrow-left");
+        icon.classList.toggle("bi-arrow-right");
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar");
+        const toggleBtn = document.getElementById("toggleSidebar");
+
+        // Toggle sidebar collapse/expand
+        toggleBtn.addEventListener("click", () => {
+          sidebar.classList.toggle("sidebar-collapsed");
+
+          // Close all accordion items when collapsing sidebar
+          if (sidebar.classList.contains("sidebar-collapsed")) {
+            const accordionCollapses = document.querySelectorAll(
+              ".accordion-collapse"
+            );
+            accordionCollapses.forEach((collapse) => {
+              const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+              if (bsCollapse) {
+                bsCollapse.hide();
+              }
+            });
+          }
+        });
+
+        // Optional: Add keyboard shortcut (Ctrl + B)
+        document.addEventListener("keydown", (e) => {
+          if (e.ctrlKey && e.key === "b") {
+            e.preventDefault();
+            sidebar.classList.toggle("sidebar-collapsed");
+
+            if (sidebar.classList.contains("sidebar-collapsed")) {
+              const accordionCollapses = document.querySelectorAll(
+                ".accordion-collapse"
+              );
+              accordionCollapses.forEach((collapse) => {
+                const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                if (bsCollapse) {
+                  bsCollapse.hide();
+                }
+              });
+            }
+          }
+        });
+      });
+    </script>
+    <script src="../js/script.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
